@@ -44,8 +44,8 @@ class MainWindow(QWidget):
 
         self.color_box = QLabel()
         self.color_box.setMinimumWidth(100)
-        self.color_box.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
-        self.color_box.setStyleSheet('beckgtound-color: lightgray')
+        #self.color_box.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
+        self.color_box.setStyleSheet('background-color: rgb(0,0,0)')
 
         self.toggle_button = QPushButton("Start")
         self.toggle_button.setCheckable(True)
@@ -82,6 +82,7 @@ class MainWindow(QWidget):
     def slider_method(self):
         value = self.slider.value()
         self.second_spinbox.setValue(value)
+        self.color_box.setStyleSheet(f'background-color: rgb({value},0,{value})')
     
 
 
